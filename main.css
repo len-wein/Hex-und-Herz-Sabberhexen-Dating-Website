@@ -1,3 +1,56 @@
+body {
+  background-color: #81b56b;
+}
+
+@font-face {
+  font-family: "Brotheric";
+  src: url("bilder/fonts/Brotheric Ink Bleed Demo.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "witch-hat";
+  src: url("bilder/fonts/Witch Hat.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .ueberschrift {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Brotheric", sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.huete {
+  font-family: "witch-hat", sans-serif;
+  color: #b5e8a0;
+}
+
+.countainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.spalte1 {
+  padding: 20px;
+  background-color: #709d5d;
+  overflow-y: auto;
+}
+
+.spalte3 {
+  padding: 20px;
+  background-color: #709d5d;
+  overflow-y: auto;
+}
+
+.spalte2 {
+  background: radial-gradient(circle, #eee8d8 0%, #d6c9ae 100%);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background-blend-mode: multiply;
+  color: t #0b5369;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  height: 100%;
 }
