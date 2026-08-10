@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>profil-erstellen</title>
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <div class="fliegende-Hexe">
+      <img src="bilder/witch-on-broom.gif" alt="fliegende Sabberhexe" />
+    </div>
+    <div class="huete">
+      <h1>
+        a h s h j v h f i f n m f b c k f b n f h d j d o d m d b d h f n f j d
+        m t o h g f n
+      </h1>
+    </div>
+    <div class="countainer">
+      <div class="spalte1">
+        <div class="sternenhimmel">
+          <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+        </div>
+      </div>
+
+      <div class="anmeldung">
+        <div class="ueberschrift"><h1>Profil erstellen</h1></div>
+        <form action="/submit-profile" method="post">
+          <label for="username">Benutzername:</label>
+          <input type="text" id="username" name="username" required /><br />
+
+          <label for="age">Alter:</label>
+          <input type="number" id="age" name="age" required /><br />
+
+          <label for="bio">Bio:</label><br />
+          <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br />
+
+          <input type="submit" value="Profil erstellen" />
+        </form>
+      </div>
+
+      <div class="spalte3">
+        <div class="sternenhimmel">
+          <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
