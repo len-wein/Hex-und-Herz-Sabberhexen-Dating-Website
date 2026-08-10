@@ -21,6 +21,11 @@ body {
   font-size: 50px;
   text-align: center;
 }
+.unter-ueberschrift {
+  font-family: "Brotheric", sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
 
 .huete {
   font-family: "witch-hat", sans-serif;
@@ -33,13 +38,15 @@ body {
 }
 
 .spalte1 {
-  background-color: #709d5d;
+  background-image: url(bilder/sternenhimmel.gif);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .spalte3 {
-  background-color: #709d5d;
+  background-image: url(bilder/sternenhimmel.gif);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .spalte2 {
@@ -70,4 +77,44 @@ body {
   animation-duration: 10s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
+}
+
+.einleitung {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: larger;
+}
+
+.sternenhimmel {
+  scale: 1;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.kessel1 {
+  place-self: end left;
+}
+
+.disclaimer {
+  font-style: italic;
+}
+
+.rezensionen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: larger;
+}
+
+.rezension1 {
+  scale: 0.8;
+  justify-self: left;
+}
+.rezension2 {
+  scale: 0.8;
+  justify-self: right;
+}
+
+.name-rez {
+  font-style: italic;
 }
