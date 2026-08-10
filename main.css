@@ -24,7 +24,7 @@ body {
 
 .huete {
   font-family: "witch-hat", sans-serif;
-  color: #b5e8a0;
+  color: #090a09;
 }
 
 .countainer {
@@ -33,13 +33,11 @@ body {
 }
 
 .spalte1 {
-  padding: 20px;
   background-color: #709d5d;
   overflow-y: auto;
 }
 
 .spalte3 {
-  padding: 20px;
   background-color: #709d5d;
   overflow-y: auto;
 }
@@ -53,4 +51,23 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
   overflow-y: scroll;
   height: 100%;
+}
+
+@keyframes vonRechtsNachLinks {
+  from {
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+}
+
+.fliegende-Hexe {
+  text-align: right;
+  animation-name: vonRechtsNachLinks;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
