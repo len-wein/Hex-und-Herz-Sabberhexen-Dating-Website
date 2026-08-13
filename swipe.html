@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swipe</title>
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <div class="fliegende-Hexe">
+      <img src="bilder/witch-on-broom.gif" alt="fliegende Sabberhexe" />
+    </div>
+    <div class="huete">
+      <h1>
+        a h s h j v h f i f n m f b c k f b n f h d j d o d m d b d h f n f j d
+        m t o h g f n
+      </h1>
+    </div>
+    
+    <div class="countainer">
+      <div class="spalte1">
+        <div class="sternenhimmel">
+          <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+        </div>
+      </div>
+
+      <div class="spalte2">
+        <div class="ueberschrift"><h1>Hex und Herz</h1></div>
+        <h3 id="hexenName">Name:</h3>
+        <h4 id="hexenAlter">Alter:</h4>
+        <h4 id="hexenBio">Bio:</h4>
+
+        <button id="sabbernButton">Zum Sabbern 🤤💖</button>
+        <button id="weghexenButton">Weghexen 🪄✨</button>
+
+        <button id="clearButton" >fakeProfile löschen</button>
+
+        
+        <script>
+          const gespeicherteHexen = JSON.parse(localStorage.getItem("sabberProfile")) || [];
+          const hexenNamePlatzhalter = document.getElementById("hexenName");
+          const hexenAlterPlatzhalter = document.getElementById("hexenAlter");
+          const hexenBioPlatzhalter = document.getElementById("hexenBio");
+        
+          let aktuellesProfilIndex = 0;
+
+          function zeigeHexenProfil() {
+            const aktuellesProfil = gespeicherteHexen[aktuellesProfilIndex];
+            
+            if (aktuellesProfil) {
+              hexenNamePlatzhalter.textContent = "Name: " + aktuellesProfil.username;
+              hexenAlterPlatzhalter.textContent = "Alter: " + aktuellesProfil.age;
+              hexenBioPlatzhalter.textContent = "Bio: " + aktuellesProfil.bio;
+            } else {
+              hexenNamePlatzhalter.textContent = "Der Hexenkessel ist leer. Keine attraktiven Sabberhexen mehr in deiner Nähe.";
+              hexenAlterPlatzhalter.textContent = "";
+              hexenBioPlatzhalter.textContent = "";   
+          }
+          }
+
+          const sabbernButton = document.getElementById("sabbernButton");
+
+          sabbernButton.addEventListener("click", function () {
+            if (aktuellesProfilIndex < gespeicherteHexen.length) {
+              alert("✨ SABBER-ALARM! ✨ IT'S A MATCH! Du hast gerade ein magisches Sabber-Date mit " + gespeicherteHexen[aktuellesProfilIndex].username + " gefunden!");
+              aktuellesProfilIndex++;
+              zeigeHexenProfil();
+            }
+          });
+
+          const weghexenButton = document.getElementById("weghexenButton");
+
+          weghexenButton.addEventListener("click", function () {
+            if (aktuellesProfilIndex < gespeicherteHexen.length) {
+              aktuellesProfilIndex++;
+              zeigeHexenProfil();
+            }
+          });
+
+          zeigeHexenProfil();
+
+          const clearButton = document.getElementById("clearButton");
+          clearButton.addEventListener("click", function () {
+            localStorage.removeItem("sabberProfile");
+            location.reload();
+          });
+
+        </script>
+      </div>
+
+      
+      <div class="spalte3">
+        <div class="sternenhimmel">
+          <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>

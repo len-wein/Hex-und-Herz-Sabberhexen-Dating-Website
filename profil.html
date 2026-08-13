@@ -25,19 +25,50 @@
 
       <div class="anmeldung">
         <div class="ueberschrift"><h1>Profil erstellen:</h1></div>
-        <form action="/submit-profile" method="post">
+
+        <form id="profileForm">
           <label for="username">Benutzername:</label>
-          <input type="text" id="username" name="username" required /><br />
+          <input type="text" id="username" name="username" required />
 
           <label for="age">Alter:</label>
-          <input type="number" id="age" name="age" required /><br />
-
+          <input type="number" id="age" name="age" required />
           <label for="bio">Bio:</label><br />
-          <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br />
+          <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
 
-          <input type="submit" value="Profil erstellen" />
+          <input type="submit" value="Profil erstellen & lossabbern!" />
         </form>
       </div>
+
+      <script>
+        document
+          .getElementById("profileForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const age = document.getElementById("age").value;
+            const bio = document.getElementById("bio").value;
+
+            const neuesProfil = {
+              username: username,
+              age: age,
+              bio: bio,
+            };
+
+            // 3. Bestehende Profile aus dem Speicher laden (falls schon welche da sind)
+            let profilListe =
+              JSON.parse(localStorage.getItem("sabberProfile")) || [];
+
+            // 4. Das neue Profil an den Anfang der Liste setzen
+            profilListe.unshift(neuesProfil);
+
+            // 5. Die aktualisierte Liste wieder im Browser speichern
+            localStorage.setItem("sabberProfile", JSON.stringify(profilListe));
+
+            // 6. Weiterleitung zur Swipe-Seite
+            window.location.href = "swipe.html";
+          });
+      </script>
 
       <div class="spalte3">
         <div class="sternenhimmel">
