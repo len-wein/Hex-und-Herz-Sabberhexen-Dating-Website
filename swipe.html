@@ -10,13 +10,33 @@
     <div class="fliegende-Hexe">
       <img src="bilder/witch-on-broom.gif" alt="fliegende Sabberhexe" />
     </div>
+
+    <button id="menu-button" aria-label="Menü öffnen">☰</button>
+
+    <nav id="menu" class="hidden">
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Über uns</a></li>
+        <li><a href="profil.html">Profil erstellen</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menu-button");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
     <div class="huete">
       <h1>
         a h s h j v h f i f n m f b c k f b n f h d j d o d m d b d h f n f j d
         m t o h g f n
       </h1>
     </div>
-    
+
     <div class="countainer">
       <div class="spalte1">
         <div class="sternenhimmel">
@@ -26,77 +46,101 @@
 
       <div class="spalte2">
         <div class="ueberschrift"><h1>Hex und Herz</h1></div>
-        <h3 id="hexenName">Name:</h3>
-        <h4 id="hexenAlter">Alter:</h4>
-        <h4 id="hexenBio">Bio:</h4>
+        <div class="unter-ueberschrift2">
+          <h2>
+            Hier findest du die grässlichsten Sabberhexen in deiner Gegend!
+          </h2>
+        </div>
 
-        <button id="sabbernButton">Zum Sabbern 🤤💖</button>
-        <button id="weghexenButton">Weghexen 🪄✨</button>
+        <div class="fenster">
+          <div class="anmeldung2">
+            <h3 id="hexenBild">Hexen Highlight:</h3>
+            <h3 id="hexenName">Name:</h3>
+            <h4 id="hexenAlter">Alter:</h4>
+            <h4 id="hexenBio">Bio:</h4>
 
-        <button id="clearButton" >fakeProfile löschen</button>
+            <button id="sabbernButton">Zum Sabbern 🤤💖</button>
+            <button id="weghexenButton">Weghexen 🪄✨</button>
 
-        
-        <script>
-          const gespeicherteHexen = JSON.parse(localStorage.getItem("sabberProfile")) || [];
-          const hexenNamePlatzhalter = document.getElementById("hexenName");
-          const hexenAlterPlatzhalter = document.getElementById("hexenAlter");
-          const hexenBioPlatzhalter = document.getElementById("hexenBio");
-        
-          let aktuellesProfilIndex = 0;
+            <button id="clearButton">fakeProfile löschen</button>
 
-          function zeigeHexenProfil() {
-            const aktuellesProfil = gespeicherteHexen[aktuellesProfilIndex];
-            
-            if (aktuellesProfil) {
-              hexenNamePlatzhalter.textContent = "Name: " + aktuellesProfil.username;
-              hexenAlterPlatzhalter.textContent = "Alter: " + aktuellesProfil.age;
-              hexenBioPlatzhalter.textContent = "Bio: " + aktuellesProfil.bio;
-            } else {
-              hexenNamePlatzhalter.textContent = "Der Hexenkessel ist leer. Keine attraktiven Sabberhexen mehr in deiner Nähe.";
-              hexenAlterPlatzhalter.textContent = "";
-              hexenBioPlatzhalter.textContent = "";   
-          }
-          }
+            <script>
+              const gespeicherteHexen =
+                JSON.parse(localStorage.getItem("sabberProfile")) || [];
+              const hexenNamePlatzhalter = document.getElementById("hexenName");
+              const hexenAlterPlatzhalter =
+                document.getElementById("hexenAlter");
+              const hexenBioPlatzhalter = document.getElementById("hexenBio");
+              const hexenBildPlatzhalter = document.getElementById("hexenBild");
 
-          const sabbernButton = document.getElementById("sabbernButton");
+              let aktuellesProfilIndex = 0;
 
-          sabbernButton.addEventListener("click", function () {
-            if (aktuellesProfilIndex < gespeicherteHexen.length) {
-              alert("✨ SABBER-ALARM! ✨ IT'S A MATCH! Du hast gerade ein magisches Sabber-Date mit " + gespeicherteHexen[aktuellesProfilIndex].username + " gefunden!");
-              aktuellesProfilIndex++;
+              function zeigeHexenProfil() {
+                const aktuellesProfil = gespeicherteHexen[aktuellesProfilIndex];
+
+                if (aktuellesProfil) {
+                  hexenNamePlatzhalter.textContent =
+                    "Name: " + aktuellesProfil.username;
+                  hexenAlterPlatzhalter.textContent =
+                    "Alter: " + aktuellesProfil.age;
+                  hexenBioPlatzhalter.textContent =
+                    "Bio: " + aktuellesProfil.bio;
+                  hexenBildPlatzhalter.textContent =
+                    "Hexen Highlight: " +
+                    (aktuellesProfil.bild || "Kein Bild verfügbar");
+                } else {
+                  hexenNamePlatzhalter.textContent =
+                    "Der Hexenkessel ist leer. Keine attraktiven Sabberhexen mehr in deiner Nähe.";
+                  hexenAlterPlatzhalter.textContent = "";
+                  hexenBioPlatzhalter.textContent = "";
+                  hexenBildPlatzhalter.textContent = "";
+                }
+              }
+
+              const sabbernButton = document.getElementById("sabbernButton");
+
+              sabbernButton.addEventListener("click", function () {
+                if (aktuellesProfilIndex < gespeicherteHexen.length) {
+                  alert(
+                    "✨ SABBER-ALARM! ✨ IT'S A MATCH! Du hast gerade ein magisches Sabber-Date mit " +
+                      gespeicherteHexen[aktuellesProfilIndex].username +
+                      " gefunden!",
+                  );
+                  aktuellesProfilIndex++;
+                  zeigeHexenProfil();
+                }
+              });
+
+              const weghexenButton = document.getElementById("weghexenButton");
+
+              weghexenButton.addEventListener("click", function () {
+                if (aktuellesProfilIndex < gespeicherteHexen.length) {
+                  aktuellesProfilIndex++;
+                  zeigeHexenProfil();
+                }
+              });
+
               zeigeHexenProfil();
-            }
-          });
 
-          const weghexenButton = document.getElementById("weghexenButton");
+              const clearButton = document.getElementById("clearButton");
+              clearButton.addEventListener("click", function () {
+                localStorage.removeItem("sabberProfile");
+                location.reload();
+              });
+            </script>
+          </div>
 
-          weghexenButton.addEventListener("click", function () {
-            if (aktuellesProfilIndex < gespeicherteHexen.length) {
-              aktuellesProfilIndex++;
-              zeigeHexenProfil();
-            }
-          });
-
-          zeigeHexenProfil();
-
-          const clearButton = document.getElementById("clearButton");
-          clearButton.addEventListener("click", function () {
-            localStorage.removeItem("sabberProfile");
-            location.reload();
-          });
-
-        </script>
+          <div class="liebeszug">
+            <img id="liebeszug" src="bilder/katzen.gif" alt="Liebeszug" />
+          </div>
+        </div>
       </div>
 
-      
       <div class="spalte3">
         <div class="sternenhimmel">
           <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
         </div>
       </div>
     </div>
-  </body>
-</html>
-
   </body>
 </html>

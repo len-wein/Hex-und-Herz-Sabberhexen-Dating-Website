@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ueber-uns</title>
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <div class="fliegende-Hexe">
+      <img src="bilder/witch-on-broom.gif" alt="fliegende Sabberhexe" />
+    </div>
+
+    <button id="menu-button" aria-label="Menü öffnen">☰</button>
+
+    <nav id="menu" class="hidden">
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Über uns</a></li>
+        <li><a href="profil.html">Profil erstellen</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menu-button");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+    <div class="huete">
+      <h1>
+        a h s h j v h f i f n m f b c k f b n f h d j d o d m d b d h f n f j d
+        m t o h g f n
+      </h1>
+    </div>
+
+    <div class="countainer">
+      <div class="spalte1">
+        <div class="sternenhimmel">
+          <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+        </div>
+      </div>
+
+      <div class="spalte2">
+        <div class="ueberschrift"><h1>Hex und Herz</h1></div>
+        <div class="ueber-uns">
+          <h3>Über uns:</h3>
+          <p>
+            Wir sind ein Team von leidenschaftlichen Entwicklern, Designern und
+            Hexenliebhabern, die sich zusammengeschlossen haben, um eine
+            einzigartige Dating-Plattform für Sabberhexen zu schaffen. Unser
+            Ziel ist es, eine sichere und unterhaltsame Umgebung zu bieten, in
+            der Sabberhexen ihre Seelenverwandten finden können. Wir glauben an
+            die Magie der Liebe und daran, dass jeder Hexenkessel einen
+            passenden Deckel verdient.
+            bla bla bla...
+          </p>
+          
+          <div class="animationen-profil">
+            <div class="kessel1">
+            <img src="bilder/kessel1.gif" alt="kessel1" />
+          </div>
+        </div>
+          
+        
+        </div>
+        </div>
+
+        <div class="spalte3">
+          <div class="sternenhimmel">
+            <img src="bilder/sternenhimmel.gif" alt="sternenhimmel" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

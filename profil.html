@@ -10,6 +10,26 @@
     <div class="fliegende-Hexe">
       <img src="bilder/witch-on-broom.gif" alt="fliegende Sabberhexe" />
     </div>
+
+    <button id="menu-button" aria-label="Menü öffnen">☰</button>
+
+    <nav id="menu" class="hidden">
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="team.html">Über uns</a></li>
+        <li><a href="profil.html">Profil erstellen</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menu-button");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
     <div class="huete">
       <h1>
         a h s h j v h f i f n m f b c k f b n f h d j d o d m d b d h f n f j d
@@ -27,12 +47,16 @@
         <div class="ueberschrift"><h1>Profil erstellen:</h1></div>
 
         <form id="profileForm">
+          <label for="photo">Profilbild:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+
           <label for="username">Benutzername:</label>
           <input type="text" id="username" name="username" required />
 
           <label for="age">Alter:</label>
           <input type="number" id="age" name="age" required />
-          <label for="bio">Bio:</label><br />
+
+          <label for="bio">Bio:</label>
           <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
 
           <input type="submit" value="Profil erstellen & lossabbern!" />
@@ -48,11 +72,13 @@
             const username = document.getElementById("username").value;
             const age = document.getElementById("age").value;
             const bio = document.getElementById("bio").value;
+            const photo = document.getElementById("photo");
 
             const neuesProfil = {
               username: username,
               age: age,
               bio: bio,
+              photo: photo,
             };
 
             // 3. Bestehende Profile aus dem Speicher laden (falls schon welche da sind)
