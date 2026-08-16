@@ -215,7 +215,7 @@ body {
   width: 100%;
 }
 
-/* Die Profilkarte der Hexe */
+
 .anmeldung2 {
   background: radial-gradient(circle, #eee8d8 0%, #d6c9ae 100%);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -227,7 +227,7 @@ body {
   height: 100%;
 }
 
-/* Textelemente innerhalb der Karte */
+
 .anmeldung2 h3,
 .anmeldung2 h4 {
   margin: 10px 0;
@@ -281,12 +281,19 @@ body {
   background: rgba(239, 68, 68, 0.1);
 }
 
+#profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 #profileForm input[type="text"]:focus,
 #profileForm input[type="number"]:focus,
 #profileForm textarea:focus {
   outline: none;
   border-color: #747d51e7;
   box-shadow: 0 0 10px #747d51e7;
+  font-size: 5 rem;
 }
 
 #profileForm input[type="file"] {
@@ -308,7 +315,7 @@ body {
 }
 
 #profileForm input[type="file"]::file-selector-button:hover {
-  background-color: #39ff14;
+  background-color: #747d51e7;
   color: #000;
 }
 
