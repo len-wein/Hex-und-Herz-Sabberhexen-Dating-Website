@@ -46,10 +46,17 @@
       <div class="anmeldung">
         <div class="ueberschrift"><h1>Profil erstellen:</h1></div>
 
-        <form id="profileForm">
-          <label for="photo">Profilbild:</label>
-          <input type="file" id="photo" name="photo" accept="image/*" />
+        <div class="profilbildUndKessel">
+          <form id="profileForm1">
+            <label for="photo">Profilbild:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" />
+          </form>
+          <div class="kessel2">
+            <img src="bilder/kessel2.gif" alt="kessel2" />
+          </div>
+        </div>
 
+        <form id="profileForm">
           <label for="username">Benutzername:</label>
           <input type="text" id="username" name="username" required />
 
@@ -78,7 +85,7 @@
               username: username,
               age: age,
               bio: bio,
-              photo: photo,
+              bild: photo,
             };
 
             // 3. Bestehende Profile aus dem Speicher laden (falls schon welche da sind)
