@@ -66,7 +66,7 @@
 
             <button id="sabbernButton">Zum Sabbern 🤤💖</button>
             <button id="weghexenButton">Weghexen 🪄✨</button>
-            <button id="clearButton">Profil löschen</button>
+            <button id="clearButton">eigenes Profil lokal löschen</button>
 
             <script>
               const defaultProfile = [
@@ -132,8 +132,8 @@
                   hexenBioPlatzhalter.textContent =
                     "Bio: " + aktuellesProfil.bio;
 
-                  hexenBildPlatzhalter.src = aktuellesProfil.bild || ""; 
-                  hexenBildPlatzhalter.style.display = "block"; 
+                  hexenBildPlatzhalter.src = aktuellesProfil.bild || "";
+                  hexenBildPlatzhalter.style.display = "block";
                 } else {
                   hexenNamePlatzhalter.textContent =
                     "Der Hexenkessel ist leer. Keine attraktiven Sabberhexen mehr in deiner Nähe.";
