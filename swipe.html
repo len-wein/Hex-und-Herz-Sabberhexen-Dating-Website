@@ -54,41 +54,51 @@
 
         <div class="fenster">
           <div class="anmeldung2">
-            <h2 id="hexenBild">Hexen Highlight:</h2>
+            <h2>Hexenhighlight:</h2>
+            <img
+              id="hexenBild"
+              alt="Hexen Foto"
+              style="max-width: 60%; height: auto; display: block"
+            />
             <h2 id="hexenName">Name:</h2>
             <h2 id="hexenAlter">Alter:</h2>
             <h2 id="hexenBio">Bio:</h2>
 
             <button id="sabbernButton">Zum Sabbern 🤤💖</button>
             <button id="weghexenButton">Weghexen 🪄✨</button>
-
-            <button id="clearButton">fakeProfile löschen</button>
+            <button id="clearButton">Profil löschen</button>
 
             <script>
               const defaultProfile = [
                 {
                   username: "Besen-Beate01",
                   age: 254,
-                  bio: "Mein frisierter Feuerblitz hat 600 PS und eine eingebaute Sitzheitzung. Suche einen furchtlosen Co-Piloten für wilde, nächtliche Besenritte. Wenn du dich traust, melde dich, aber ACHTUNG!!! wenn du mich nervst verzaubere ich deinen Porsche Cayenne in einen Fiat 500... ",
-                  bild: "bilder/Sabberhexe2.png",
+                  bio: "Mein frisierter Nimbus 2000 hat 600 PS und eine eingebaute Sitzheitzung. Suche einen furchtlosen Co-Piloten für wilde, nächtliche Besenritte. Wenn du dich traust, melde dich, aber ACHTUNG!!! wenn du mich nervst verzaubere ich deinen Porsche Cayenne in einen Fiat 500... ",
+                  bild: "bilder/hexe-swipe1.png",
                 },
                 {
                   username: "Mieze-Malicia77",
                   age: 591,
                   bio: "Ich komme im Doppelpack mit meinen 7 schwarzen Katzen. Namentlich Konrad, Hubertus, Archibald, Wilhelm, Helmut, Siegfried und Karl-Heinz. Wenn meine Katzen dich nicht mögen oder dir die Konkurenz zu stark ist, wirst du zu Katzenfutter verarbeitet. Ansonsten bin ich ganz zahm.",
-                  bild: "bilder/Sabberhexe2.png",
+                  bild: "bilder/hexe-swipe2.png",
                 },
                 {
                   username: "KesselKarmen129",
                   age: 332,
                   bio: "Liebe geht bekanntlich durch den Magen - besonders wenn mein berüchtigeter Liebestrank drinn ist. Ich koche eine mordsmäßig-gute Fledermaus-Suppe, die dich garantiert umhauen wird. Suche einen mutigen Vorkoster für meine neuesten Kreationen, wobei eine hohe Lebenserwartung durchaus von Vorteil wäre...",
-                  bild: "bilder/Sabberhexe2.png",
+                  bild: "bilder/hexe-swipe3.png",
                 },
                 {
                   username: "Hexe-Hildegard88",
                   age: 412,
-                  bio: "Ich bin es so leid, allein in meinem windschiefen Knusperhäuschen zu hocken – ich suche doch einfach nur meinen Froschkönig zum Küssen! Ich esse übrigens auch seit gut einhundert Jahren keine Kinder mehr, sie lagen mir am Ende einfach viel zu schwer auf dem Magen. Heute bin ich total zahm und füttere dich lieber mit Kinderallternativen. Bitte wische nach rechts, ich habe den Kessel schon für zwei Personen gedeckt.",
-                  bild: "bilder/Sabberhexe2.png",
+                  bio: "Ich bin es so leid, allein in meinem windschiefen Knusperhäuschen zu hocken – ich suche doch einfach nur meinen Froschkönig zum Küssen! Ich esse übrigens auch seit gut einhundert Jahren keine Kinder mehr, sie lagen mir am Ende einfach viel zu schwer auf dem Magen. Heute bin ich total zahm und füttere dich lieber mit Kinderallternativen. Bitte wische nach rechts, ich habe den Kessel schon für Zwei gedeckt.",
+                  bild: "bilder/hexe-swipe4.png",
+                },
+                {
+                  username: "Schnuckel-Samantha007",
+                  age: 298,
+                  bio: "Sabberhexe mit Stil gefällig? Ich bin eine modebewusste junge Hexe, die stehts die neusten Hexentrends verfolgt. Mein Geschmack ist exquisit und ich weiß genau was ich will. Ich kenne meinen Wert und werde mich nicht mit weniger zufrieden geben. Ich suche einen Gentleman, der mich auf meinen Besen durch die Lüfte trägt und mir die Sterne vom Himmel holt (und bestenfalls mehr als sechs Nullen auf seinem Hexenkonto besitzt).",
+                  bild: "bilder/hexe-swipe1.png",
                 },
               ];
 
@@ -118,18 +128,19 @@
                   hexenNamePlatzhalter.textContent =
                     "Name: " + aktuellesProfil.username;
                   hexenAlterPlatzhalter.textContent =
-                    "Alter: " + aktuellesProfil.age + " jung";
+                    "Alter: " + aktuellesProfil.age + " Jahre jung";
                   hexenBioPlatzhalter.textContent =
                     "Bio: " + aktuellesProfil.bio;
-                  hexenBildPlatzhalter.textContent =
-                    "Hexen Highlight: " +
-                    (aktuellesProfil.bild || "Kein Bild verfügbar");
+
+                  hexenBildPlatzhalter.src = aktuellesProfil.bild || ""; 
+                  hexenBildPlatzhalter.style.display = "block"; 
                 } else {
                   hexenNamePlatzhalter.textContent =
                     "Der Hexenkessel ist leer. Keine attraktiven Sabberhexen mehr in deiner Nähe.";
                   hexenAlterPlatzhalter.textContent = "";
                   hexenBioPlatzhalter.textContent = "";
-                  hexenBildPlatzhalter.textContent = "";
+                  hexenBildPlatzhalter.src = "";
+                  hexenBildPlatzhalter.style.display = "none";
                 }
               }
 

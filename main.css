@@ -360,6 +360,13 @@ body {
   place-self: right;
 }
 
+.kessel2-text {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  text-align: left;
+  margin-top: 10px;
+}
+
 #team {
   text-align: center;
   margin: 30px 0;
